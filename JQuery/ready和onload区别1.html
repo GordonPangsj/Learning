@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Ready & onload different</title>
+	<script type="text/javascript" src="scripts/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript">
+		var startTime = new Date().getTime();
+        $(document).ready(function () {
+            var readyTime = new Date().getTime() - startTime;
+            $("<div>jQuery的ready() : " + readyTime + " ms</div>").appendTo("body");
+        })
+        $(document).ready(function () {
+            var readyTime2 = new Date().getTime() - startTime;
+            $("<div>jQuery的ready() 2 : " + readyTime2 + " ms</div>").appendTo("body");
+        })
+
+        //windowOnLoadTime会被windowOnLoadTime2覆盖
+        window.onload = function () {
+            var windowOnLoadTime = new Date().getTime() - startTime;
+            $("<div>window.onload : " + windowOnLoadTime + " ms</div>").appendTo("body");
+        }
+        window.onload = function () {
+            var windowOnLoadTime2 = new Date().getTime() - startTime;
+            $("<div>window.onload 2 : " + windowOnLoadTime2 + " ms</div>").appendTo("body");
+        }
+	</script>
+</head>
+<body>
+	<img src="http://www.google.com.hk/logos/2011/cezanne11-hp.jpg" style="width:200px;height:200px;"/>
+</body>
+</html>
