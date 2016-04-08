@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title></title>
+	<script type="text/javascript" src="scripts/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#divid").bind("click", function(){
+				displayNone();
+				$("#divone").css("display", "block");
+			})
+			$("#divclass").bind("click", function(){
+				displayNone();
+				$(".clsFrame .classone").css("display", "block");
+			})
+			$("#spanbtn").bind("click", function(){
+				displayNone();
+				$("div span").css("display", "block");
+			})
+			$("#all").bind("click", function(){
+				displayNone();
+				$("*").css("display", "block");
+			})
+			$("#dispan").bind("click", function(){
+				displayNone();
+				$("#divone span").css("display", "block");
+			})
+		})
+
+		function displayNone(){
+			$("#divone").css("display", "none");
+			$(".classone").css("display", "none");
+			$("span").css("display", "none");
+		}
+	</script>
+</head>
+<body>
+<div class="clsFrame">
+	<div id="divone">DIVID</div>
+	<div class="classone">CLASS</div>
+	<span>SPAN</span>
+</div>
+
+<button id="divid">显示ID的元素</button>
+<button id="divclass">显示Class的元素</button>
+<button id="spanbtn">显示span元素</button>
+<button id="all">显示所有元素</button>
+<button id="dispan">显示ID和SPAN元素</button>
+</body>
+</html>
