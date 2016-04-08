@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Jquery隔行变色</title>
+	<script type="text/javascript" src="scripts/jquery-1.12.3.min.js"></script>
+	<style type="text/css">
+	li, div{
+		line-height: 20px;
+		background-color: #000;
+		color: #fff;
+		width: 300px;
+		margin:2px;
+	}
+	tr{
+		width:260px;
+		border: solid 1px #666;
+		background-color: #000;
+		color: #fff;
+	}
+	.liOdd, .divOdd, .trOdd{
+		background-color: #fff;
+		color: #000;
+	}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//:even 中间不能有空格
+			$("li:even").addClass("liOdd");
+			$("#divchange div:even").addClass("divOdd");
+			//$("#tablechange tr:even").addClass("trOdd");
+			$("#tablechange tr:nth-child(even)").addClass("trOdd");
+		});
+	</script>
+</head>
+<body>
+	<section id="lichange">
+		<ul>
+			<li>li隔行变色1</li>
+			<li>li隔行变色2</li>
+			<li>li隔行变色3</li>
+			<li>li隔行变色4</li>
+			<li>li隔行变色5</li>
+			<li>li隔行变色6</li>
+		</ul>
+	</section>
+	<section id="divchange">
+		<div>div隔行变色1</div>
+		<div>div隔行变色2</div>
+		<div>div隔行变色3</div>
+		<div>div隔行变色4</div>
+		<div>div隔行变色5</div>
+		<div>div隔行变色6</div>
+	</section>
+	<section id="tablechange">
+		<table>
+			<thead>
+				<tr><th>12345</th></tr>
+			</thead>
+			<tbody>
+				<tr><th>table的标题栏</th></tr>
+				<tr><td>table隔行变色1</td></tr>
+				<tr><td>table隔行变色2</td></tr>
+				<tr><td>table隔行变色3</td></tr>
+				<tr><td>table隔行变色4</td></tr>
+				<tr><td>table隔行变色5</td></tr>
+				<tr><td>table隔行变色6</td></tr>
+			</tbody>
+		</table>
+	</section>
+</body>
+</html>
