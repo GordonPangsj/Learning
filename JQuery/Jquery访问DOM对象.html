@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title></title>
+	<script type="text/javascript" src="scripts/jquery-1.12.3.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").bind("click", infoSumbit);
+		})
+
+		function infoSumbit(){
+			var name = $("#txtName").val();
+			var sex = $("#info input[name='rdoSex']:checked").val();
+			var interest = "";
+
+			$("input[name='cbxInterest']:checked").each(function(){ 
+				interest = interest + ($(this).val()) + ", "; 
+			}); 
+
+			interest = interest.substr(0, interest.length - 2);
+
+			alert("姓名：" + name + ", 性别：" + sex + ", " + "兴趣：" + interest);
+		}
+	</script>
+</head>
+<body>
+	<section>
+		<ul id="info">
+			<li>姓名:<input id="txtName" type="text" placeholder="请输入姓名"></li>
+			<li>性别:<input name="rdoSex" type="radio" value="男">男&nbsp;<input name="rdoSex" type="radio" value="女">女</li>
+			<li>兴趣：<input name="cbxInterest" type="checkbox" value="足球">足球&nbsp;<input name="cbxInterest" type="checkbox" value="篮球">篮球&nbsp;<input name="cbxInterest" type="checkbox" value="排球">排球
+			<li><button>提交</button></li>
+		</ul>
+	</section>
+</body>
+</html>
