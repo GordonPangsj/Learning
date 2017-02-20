@@ -78,6 +78,8 @@ var result = compareNames({name: "Nicholas"}, {name: "Greg"});
 compareNames = null;
 
 五、关于this对象
+在闭包中使用this对象也可能导致一些问题。this对象是在运行时基于函数的执行环境绑定的：在全局函数中，this等于window，而当函数被作为某个对象的方法调用时，this等于那个对象。
+
 
 
 
