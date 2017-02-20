@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function Animal(name){      
+            this.name = name;      
+            this.showName = function(){      
+                alert(this.name);      
+            }      
+        }      
+            
+        function Cat(name){ 
+            Animal.call(this, name);    
+            this.miao = function(){
+                alert(name + "喵");
+            }
+        }      
+            
+        var cat = new Cat("Black Cat");     
+        cat.showName();  
+        cat.miao()
+        // function Class10()  
+        // {  
+        //     this.showSub = function(a,b)  
+        //     {  
+        //         alert(a-b);  
+        //     }  
+        // }  
+        
+        // function Class11()  
+        // {  
+        //     this.showAdd = function(a,b)  
+        //     {  
+        //         alert(a+b);  
+        //     }  
+        // }  
+        
+        // function Class2()  
+        // {  
+        //     Class10.call(this);  
+        //     Class11.call(this);  
+        // }
+
+        // var objClass = new Class2();
+        // objClass.showAdd(1,2);
+        // objClass.showSub(3,1);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
