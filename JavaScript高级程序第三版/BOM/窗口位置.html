@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        var leftPos = (typeof window.screenLeft == "number") ? window.screenLeft : window.screenX;
+        var topPos = (typeof window.screenTop == "number") ? window.screenTop : window.screenY;
+
+        alert(leftPos + ", " + topPos);
+
+        window.moveTo(0, 0);
+
+        alert("移动到0，0坐标");
+
+        window.moveBy(0, 100);
+
+        alert("向下移动100像素");
+    </script>
+</body>
+</html>

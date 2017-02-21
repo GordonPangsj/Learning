@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    setTimeout("alert('test setTimeout!')", 1000);
+
+    setTimeout(function(){
+        alert("使用函数而不是字符串调用settimeout", 2000);
+    });
+    var icount = 0;
+    var timer = setInterval(function(){
+        icount++;
+        alert("test setInterval");
+        if(icount > 1){
+            clearInterval(timer);
+        }
+    }, 5000);
+    </script>
+</body>
+</html>
