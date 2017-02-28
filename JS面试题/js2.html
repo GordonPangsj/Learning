@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var obj1 = {
+        name1: 'obj1', 
+        fn: function() {
+            console.log(this.name1);
+        }
+    };
+    var obj2 = {name1: 'obj2'};
+    var obj3 = {name1: 'obj3'};
+    obj1.fn();
+    var newFn = obj1.fn;
+    newFn();
+    newFn.call(obj2);
+    obj3.fn = newFn;
+    obj3.fn();
+
+    //obj1, undefined, obj2, obj3
+    </script>
+</body>
+</html>

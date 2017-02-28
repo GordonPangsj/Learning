@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     var a = 100;
+    function fn() {
+        console.log(a);
+        var a = 200;
+        console.log(a);
+    }
+    fn();
+    console.log(a);
+    var a;
+    console.log(a);
+    var a = 300;
+    console.log(a);
+    //100, 200,100,undefined,300
+    //答案： undefined, 200, 100, 100, 300
+    //不解：为什么先undefined
+    </script>
+</body>
+</html>
