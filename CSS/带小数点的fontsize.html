@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对于hack的小技巧，不过只适用于1px的效果</title>
+    <style>
+    p{
+        font-size: 12px;
+    }
+
+    .fs12down{
+        font-size:12.4px;
+    }
+    .fs12up{
+        font-size:12.5px;
+    }
+    .fs11up{
+        font-size:11.9px;
+    }
+    .fs11down{
+        font-size:11.1px;
+    }
+    </style>
+</head>
+<body>
+    <!-- mac下chrome，貌似变成了带小数点的就增大一px ，IE： 带小数点的都是比它小的字体大小， ff： 都是4舍5入类型的-->
+    <p>这是一段测试的fontsize段落</p>
+    <p class="fs12down">这是一段测试的fontsize段落</p>
+    <p class="fs12up">这是一段测试的fontsize段落</p>
+    <p class="fs11up">这是一段测试的fontsize段落</p>
+    <p class="fs11down">这是一段测试的fontsize段落</p>
+</body>
+</html>
