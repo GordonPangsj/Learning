@@ -29,5 +29,33 @@
     <p class="fs12up">这是一段测试的fontsize段落</p>
     <p class="fs11up">这是一段测试的fontsize段落</p>
     <p class="fs11down">这是一段测试的fontsize段落</p>
+
+
+    <!--一般可以用来处理1px的padding值，避免hack-->
+    <div>
+        <div style="background-color: red; padding: 0 11.1px">
+            <div style="background-color: #fff; height:40px;">11.1</div>
+        </div>
+    </div>
+    <div>
+        <div style="background-color: green; padding: 0 11.9px">
+            <div style="background-color: #fff; height:40px;">11.9</div>
+        </div>
+    </div>
+    <div>
+        <div style="background-color: red; padding: 0 12px">
+            <div style="background-color: #fff; height:40px;">12</div>
+        </div>
+    </div>
+    <div>
+        <div style="background-color: green; padding: 0 12.1px">
+            <div style="background-color: #fff; height:40px;">12.1</div>
+        </div>
+    </div>
+    <div>
+        <div style="background-color: red; padding: 0 12.9px">
+            <div style="background-color: #fff; height:40px;">12.9</div>
+        </div>
+    </div>
 </body>
 </html>
