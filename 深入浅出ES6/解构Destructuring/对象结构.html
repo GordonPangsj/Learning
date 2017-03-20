@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //解构对象
+        var objA = { name: "Gordon" };
+        var objB = { name: "Nicole" };
+        var { name: nameA } = objA;
+        var { name: nameB } = objB;
+        console.log(nameA + ", " + nameB);
+
+        //当属性名和变量名一致，可以简写
+        var { foo, bar } = { foo: "lorem", bar: "ipsum" };
+        console.log(foo + ", " + bar);
+
+        //可以随意嵌套并进一步组合对象解构
+        var complicatedObj = {
+            arrayProp: [
+                "Zapp",
+                { second: "Brannigan" }
+            ]
+        };
+        var { arrayProp: [first, { second }] } = complicatedObj;
+        console.log(first + ", " + second);
+
+        //解构未定义的属性时，得到undefined
+        var { missing } = {};
+        console.log(missing);
+
+        
+    </script>
+</body>
+</html>
