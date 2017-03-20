@@ -8,7 +8,32 @@
 </head>
 <body>
     <script>
-        
+        //从前的做法： 不定参数
+        //containsAll检查字符串中包含若干个字串
+        //例如：containsAll（'banana', 'b', 'nan'） true
+        //containsAll('banana', 'c', 'nan')  false
+
+        function containsAll(haystack){
+            for(var i= 1; i<arguments.length;i++){
+                var needle = arguments[i];
+                if(haystack.indexOf(needle) === -1){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function newContainsAll(haystack, ...needles){
+            for(var needle of needles){
+                if(haystack.indexOf(needle) === -1){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        containsAll("banana", "b", "nan");
+        newContainsAll("banana", "b", "nan", "c");
     </script>
 </body>
 </html>
