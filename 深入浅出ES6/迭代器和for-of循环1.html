@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+         var arrData = [1, 2, 3];
+         //强大的for-of循环
+         for(var value of arrData){
+             console.log(value);
+         }
+
+         //最简洁，最直接的遍历数组元素的语法
+         //避开了for-in循环的所有缺陷
+         //可以正确响应break、continue和return语句
+         for(var value of arrData){
+             if(value == 1){
+                 continue;
+             }
+             if(value == 3){
+                 break;
+             }
+             console.log(value);
+         }
+
+         //for-of也可以遍历其它的集合:DOM NodeList对象、 字符串遍历
+         //同样支持Map和Set对象遍历
+         //Set对象可以自动排除重复项（对象不行。数字，字符串可以）
+         var arrUniqueWords = new Set([1,2,3,4,5,{name: "gordon"},2, {name: "gordon"}, '1']);
+         for(var word of arrUniqueWords){
+             console.log(word);
+         }
+
+         //Map对象稍有不同，内含的数据由键值对组成，所以你需要使用解构（destructuring）来将键值对拆解为2个独立的变量
+        //  for(var [key, value] of phoneBookMap){
+        //      console.log(key + ': ' + value);
+        //  }
+        
+        //如果想遍历对象，最好使用for-in循环，如果非要使用for-of，可以用内建的Object.keys()方法
+        var someObject = {"1": "a", "2": "b", "3": "c"};
+        for(var key of Object.keys(someObject)){
+            console.log(key + ": " + someObject[key]);
+        }
+
+    </script>
+</body>
+</html>
