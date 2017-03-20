@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var map = new Map();
+        map.set(window, "the global");
+        map.set(document, "the document");
+        for( var [key, value] of map){
+            console.log(key + " is " + value);
+        }
+
+        //只遍历建
+        for(var [key] of map){
+            console.log(`key is ${key}`);
+        }
+
+        //只遍历值
+        for(var [, value] of map){
+            console.log(`value is ${value}`);
+        }
+    </script>
+</body>
+</html>
