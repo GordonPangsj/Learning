@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // class RangeIterator{
+        //     constructor(start, stop){
+        //         this.value = start;
+        //         this.stop = stop;
+        //     }
+
+        //     [Symbol.iterator](){ return this; }
+
+        //     next(){
+        //         var value = this.value;
+        //         if(value < this.stop){
+        //             this.value++;
+        //             return {done: false, value: value};
+        //         }else{
+        //             return {done: true, value: undefined};
+        //         }
+        //     }
+        // }
+
+        // //返回一个新的迭代器，可以从start到stop计数
+        // function range(start, stop){
+        //     return new RangeIterator(start, stop);
+        // }
+
+        //可以替代上面的23行代码
+        function* range(start, stop){
+            for(var i=start; i<stop; i++)
+                yield i;
+        }
+
+        
+
+        for(var value of range(0, 3)){
+            console.log("Ding! at floor#" + value);
+        }
+    </script>
+</body>
+</html>

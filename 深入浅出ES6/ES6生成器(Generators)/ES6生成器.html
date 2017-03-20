@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="clickMe()">click me</button>
+    <script>
+        
+        function* quips(name){
+            yield "你好" + name + "!";
+            yield "希望你能喜欢这篇介绍ES6的译文";
+            if(name.startsWith("X")){
+                yield "你的名字" + name + "  首字母是X，这很酷！";
+            }
+            yield "我们下次再见！";
+        }
+
+        var iter = quips("gordon");
+
+        function clickMe(){
+            var result = iter.next();
+            if (result.done) {
+                // The generator returned. It has nothing more to say.
+                console.log("over");
+                iter = undefined;
+            } else {
+                // The generator yielded a value. Display it.
+                console.log(result.value);
+            }
+        }
+        //生成器函数
+        //区别：
+        //普通函数使用function声明，而生成器函数使用function*普通函数使用function声明
+        //在生成器函数内部，有一种类似return的语法，关键字yield。
+        //普通函数只能return一次，而生成器函数可以yield多次。
+        //在生成器的执行过程中，遇到yield表达式立即暂停，后续可恢复执行状态
+    </script>
+</body>
+</html>
