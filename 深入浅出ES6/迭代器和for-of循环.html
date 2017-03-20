@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arrData = [1,2,3];
+        //最早遍历数组
+        for(var index=0; index<arrData.length; index++){
+            console.log(arrData[index]);
+        }
+
+
+        //ES5发布后: 缺陷：不能使用break语句终端循环，也不能使用return语句返回到外层函数
+        arrData.forEach(function(value){
+            console.log(value);
+        })
+
+
+        //不推荐：
+        //那么你一定想尝试下for=in循环
+        //如果数组中有一个可枚举属性arrData.name， 循环将额外执行一次
+        //在某些情况下。可能随机顺序遍历数组元素
+        //for-in是为普通对象设计的，不是用于数组遍历
+        for(var index in arrData){   
+            console.log(arrData[index]);
+            //不合理的情况
+            console.log("index + 1 = " + index + 1);
+        }
+    </script>
+</body>
+</html>
