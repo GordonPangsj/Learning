@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //for-of循环语句通过方法调用来遍历各种集合
+        //数组、Maps对象、Sets对象以及其它在我们讨论的对象由一个共同点，
+        //它们都有一个迭代器方法
+        //你可以给任意类型的对象添加迭代器方法
+
+        //for-of循环首先调用结合的[Symbol.iterator]()方法，紧接着返回一个
+        //新的迭代器对象。迭代器对象可以是任意具有.next（）方法的对象；
+
+        //模拟最简单的迭代器
+        var zeroesForeverIterator = {
+            [Sysmbol.iterator]: function(){
+                return this;
+            },
+            next: function(){
+                return {done: false, value: 0};
+            }
+        }
+    </script>
+</body>
+</html>
