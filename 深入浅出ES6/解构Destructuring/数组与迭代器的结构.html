@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //[ variable1, variable2, ..., variableN ] = array;
+        //深度的嵌套数组解构
+        var [foo, [[bar], baz]] = [1, [[2], 3]];
+        console.log(foo);
+        // 1
+        console.log(bar);
+        // 2
+        console.log(baz);
+        // 3
+
+        //对应位留空来跳过
+        var [,,third] = ["foo", "bar", "baz"];
+        console.log(third);
+        // "baz"
+
+        //不定参数模式捕获数组中的所有尾随元素
+        var [head, ...tail] = [1, 2, 3, 4];
+        console.log(tail);
+        // [2, 3, 4]
+
+        //当访问空数组或越界访问数组时，对其结构与对其索引的行为一致，最终都是undefined
+        console.log([][0]);
+        // undefined
+        var [missing] = [];
+        console.log(missing);
+        // undefined
+
+
+        function* fibs(){
+            var a = 0;
+            var b = 1;
+            while(true){
+                console.log(a);
+                //0, 1  => 0
+                //1, 1  => 1
+                //1. 2  => 1
+                //2, 3  => 2
+                //3, 5  => 3
+                //5, 8  => 5
+                yield a;
+                [a, b] = [b, a + b];
+            }
+        }
+        var [first, second, third, fourth, fifth, sixth] = fibs();
+        console.log(sixth);
+    </script>
+</body>
+</html>

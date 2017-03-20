@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //传统属性访问
+        var someArray = [1, 2, 3];
+
+        var first = someArray[0];
+        var second = someArray[1];
+        var third = someArray[2];
+
+        console.log("first: " + first + ", second: " + second + ", third: " + third);
+
+        //使用解构赋值的特性
+        var [first, second, third] = someArray;
+        console.log(`first: ${first}, second: ${second}, third: ${third}`);
+    </script>
+</body>
+</html>
